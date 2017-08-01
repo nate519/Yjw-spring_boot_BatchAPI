@@ -28,8 +28,12 @@ public class UserRepositoryTest {
     }*/
 
     @Test
-    public void save() throws Exception {
+    public void select() throws Exception {
         User user = new User("davidweb", "1234" , "JungWon" );
-        userRepository.save(user);
+
+        User selectedUser = userRepository.findOne(user.getId());
+
+        assertEquals("davidweb", selectedUser.getId());
+
     }
 }
